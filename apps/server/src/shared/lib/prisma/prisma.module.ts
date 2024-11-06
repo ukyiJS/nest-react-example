@@ -1,4 +1,4 @@
-import { EnvModule } from '@/shared/libs/env/env.module.js';
+import { EnvModule } from '@/shared/lib/env/env.module.js';
 import { Global, Module } from '@nestjs/common';
 import { PrismaService } from './prisma.service.js';
 
