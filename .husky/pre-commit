@@ -1,5 +1,18 @@
-# lockfile check
-(git add **/package.json pnpm-lock.yaml && pnpm install --frozen-lockfile > /dev/null) || (echo "\n pnpm-lock.yaml 이 최신이 아닙니다. 'pnpm i'로 lockfile 을 업데이트 해주세요\n" && exit 1)
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-# lint check
-pnpm lint || (echo "\n lint에 맞게 코드를 수정해주세요.\n" && exit 1)
+echo "\033[0;34m🔍pnpm-lock.yaml 최신 상태 체크 중...\033[0m\n"
+pnpm install --frozen-lockfile
+if [ $? -ne 0 ]; then
+  echo "\n\033[0;31m❌ pnpm-lock.yaml 파일이 최신 상태가 아닙니다.\033[0m \033[0;34m'pnpm install'\033[0m\033[0;31m을 실행하여 최신 상태로 업데이트해 주세요.\033[0m\n"
+  exit 1
+fi
+echo "\n\033[0;32m✅ pnpm-lock.yaml 최신 상태 체크 완료\033[0m\n"
+
+echo "\033[0;34m🔍Lint 체크 실행 중...\033[0m"
+pnpm lint
+if [ $? -ne 0 ]; then
+  echo "\n\033[0;31m❌ Lint 에러가 발생했습니다. Lint 에러를 해결해주세요.\033[0m\n"
+  exit 1
+fi
+echo "\n\033[0;32m✅ Lint 체크 완료\033[0m\n"
