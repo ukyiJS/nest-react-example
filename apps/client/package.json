@@ -1,0 +1,35 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode development",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "start:dev": "vite preview --mode development",
+    "start:prod": "vite preview --mode production",
+    "test:unit": "vitest",
+    "test:e2e": "playwright test",
+    "build-only": "vite build",
+    "type-check": "tsc -b",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "shared": "workspace:^*",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^20.3.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vite-tsconfig-paths": "^5.1.0",
+    "vitest": "^2.1.4"
+  }
+}
