@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "start": "pnpm -F server start",
+    "start:dev": "pnpm -F server start:dev",
+    "start:prod": "pnpm -F server start:prod",
     "lint": "turbo lint"
   },
   "devDependencies": {
