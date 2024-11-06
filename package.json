@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "start": "pnpm -F server start",
     "lint": "turbo lint"
   },
   "devDependencies": {
