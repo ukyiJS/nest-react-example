@@ -2,6 +2,7 @@
   "name": "nest-react-example",
   "version": "1.0.0",
   "scripts": {
+    "prepare": "husky",
     "dev": "turbo dev",
     "build": "turbo build",
     "start:dev": "pnpm -F server start:dev",
@@ -20,6 +21,7 @@
     "eslint-plugin-react-refresh": "^0.4.12",
     "eslint-plugin-vue": "^9.29.0",
     "globals": "^15.9.0",
+    "husky": "^9.1.6",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^6.2.3",
     "simple-git-hooks": "^2.9.0",
