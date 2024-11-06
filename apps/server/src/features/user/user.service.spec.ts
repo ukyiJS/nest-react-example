@@ -1,4 +1,4 @@
-import { PrismaService } from '@/shared/libs/prisma/prisma.service.js';
+import { PrismaService } from '@/shared/lib/prisma/prisma.service.js';
 import type { TestingModule } from '@nestjs/testing';
 import { Test } from '@nestjs/testing';
 import type { User } from '@prisma/client';
