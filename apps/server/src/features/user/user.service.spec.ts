@@ -1,9 +1,11 @@
 import { PrismaService } from '@/shared/libs/prisma/prisma.service.js';
-import { Test, TestingModule } from '@nestjs/testing';
-import { $Enums, User } from '@prisma/client';
+import type { TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
+import type { User } from '@prisma/client';
+import { $Enums } from '@prisma/client';
 import { beforeEach, describe, expect, it, vitest } from 'vitest';
-import { CreateUserDto } from './dto/create-user.dto.js';
-import { UpdateUserDto } from './dto/update-user.dto.js';
+import type { CreateUserDto } from './dto/create-user.dto.js';
+import type { UpdateUserDto } from './dto/update-user.dto.js';
 import { UserService } from './user.service.js';
 
 describe('UserService', () => {

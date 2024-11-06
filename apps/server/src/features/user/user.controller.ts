@@ -1,12 +1,13 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { User } from '@prisma/client';
-import { CreateUserDto } from './dto/create-user.dto.js';
-import { UpdateUserDto } from './dto/update-user.dto.js';
+import { Body, Controller, Delete, Get, Inject, Param, Post, Put } from '@nestjs/common';
+import type { User } from '@prisma/client';
+import type { CreateUserDto } from './dto/create-user.dto.js';
+import type { UpdateUserDto } from './dto/update-user.dto.js';
 import { UserService } from './user.service.js';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  @Inject(UserService)
+  private readonly userService: UserService;
 
   @Post()
   async createUser(@Body() createUserDto: CreateUserDto): Promise<User> {

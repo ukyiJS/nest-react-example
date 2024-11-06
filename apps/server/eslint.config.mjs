@@ -19,12 +19,6 @@ export default [
   ...eslintVitestConfig,
   ...eslintPlaywrightConfig,
   {
-    files: ['**/*.ts'],
-    rules: {
-      '@typescript-eslint/consistent-type-imports': 'off',
-    },
-  },
-  {
     ignores: [
       'node_modules',
       'dist',

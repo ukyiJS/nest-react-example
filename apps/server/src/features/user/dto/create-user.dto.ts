@@ -1,4 +1,4 @@
-import { Prisma } from '@prisma/client';
+import type { Prisma } from '@prisma/client';
 import { $Enums } from '@prisma/client';
 import { IsString, IsEnum, IsOptional } from 'class-validator';
 
