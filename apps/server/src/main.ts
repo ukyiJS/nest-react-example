@@ -1,9 +1,8 @@
+import { GLOBAL_PREFIX } from '@/shared/config/global-prefix.config.js';
 import { EnvService } from '@/shared/libs/env/env.service.js';
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '@/app/app.module.js';
-
-const GLOBAL_PREFIX = 'api';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -14,7 +13,7 @@ async function bootstrap() {
   await app.listen(port);
 
   Logger.log(
-    `🚀 Server running on http://localhost:${port}/${GLOBAL_PREFIX}`,
+    `🚀 Server running on http://localhost:${port}${GLOBAL_PREFIX}`,
     'Server',
   );
 }
